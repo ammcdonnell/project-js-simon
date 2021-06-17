@@ -57,9 +57,11 @@ html {
   background-color: #2185D0;
 }
 
-.startbutton {
-  display: inline-block;
+.directions{
   text-align: center;
+}
+
+.start-button {
   padding: 0 30px;
   font-size: 12px;
   text-transform: uppercase;
