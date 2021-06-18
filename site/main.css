@@ -63,6 +63,9 @@ html {
   opacity: 40%;
 }
 
+.directions {
+  display: none;
+}
 
 .directions{
   text-align: center;
