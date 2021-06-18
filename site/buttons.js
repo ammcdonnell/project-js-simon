@@ -7,17 +7,7 @@ function startGame() {
   startButton.classList.add("hidden");
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
-  //run the sequence
   runGame(index);
-  //take the inputs
-  while(index != arraySize || !gameOver){}
-  //index = 0;
-  if(gameOver){
-    endGame();
-    return;
-  }
-  else{runGame}
-  //run the sequence
 }
 startButton.addEventListener("click", startGame);
 

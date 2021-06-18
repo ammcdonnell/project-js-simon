@@ -14,6 +14,7 @@ let blueButton = document.querySelector(".simon-button.blue");
 // how to make the sequence of buttons
 var newNumber;
 var gameOver = false;
+var arraySize;
 
 //Adds a random integer between 0-3 that correspond to the 4 buttons that can be pressed
 function addtoSequence() {
@@ -45,6 +46,8 @@ function flash(simonButton) {
 }
 
 function runGame(index) {
+  index = 0;
+  arraySize = sequence.length();
   //Adds a button to the sequence
   addtoSequence();
   //Flashes all the buttons in the sequence in order
