@@ -9,7 +9,7 @@ const startButton = document.querySelector('.js-start');
 function startGame() {
   startButton.classList.add('directions');
 }
-info.classList.remove('hidden');
+info.classList.remove('directions');
 info.textContent = 'Wait for the computer';
 
 startButton.addEventListener('click', startGame);
