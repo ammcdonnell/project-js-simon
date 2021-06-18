@@ -5,19 +5,14 @@ let sequence = [];
 let humanSequence = [];
 
 const startButton = document.querySelector('.js-start');
-const info = document.querySelector('js-info');
+const info = document.querySelector('.js-info');
 
 function startGame() {
   startButton.classList.add('hidden');
-info.classList.remove('hidden');
-info.textContent = 'Wait for the computer';
+  info.classList.remove('hidden');
+  info.textContent = 'Wait for the computer';
 }
 startButton.addEventListener('click', startGame);
 
-function lightButton() {
-  console.log('Called lightButton()');
-}
-
-let lightButton = document.querySelector ('#light-up');
-lightButton.addEventListener('click', function() {
-}
+// comparison of what the computer has entered vs. what the user has entered
+// how to make the sequence of buttons
