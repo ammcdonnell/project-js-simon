@@ -7,9 +7,9 @@ let humanSequence = [];
 const startButton = document.querySelector('.js-start');
 
 function startGame() {
-  startButton.classList.add('directions');
+  startButton.classList.add('hidden');
 }
-info.classList.remove('directions');
+info.classList.remove('hidden');
 info.textContent = 'Wait for the computer';
 
 startButton.addEventListener('click', startGame);
