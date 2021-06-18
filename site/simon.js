@@ -14,9 +14,10 @@ info.textContent = 'Wait for the computer';
 }
 startButton.addEventListener('click', startGame);
 
-
+function lightButton() {
+  console.log('Called lightButton()');
+}
 
 let lightButton = document.querySelector ('#light-up');
 lightButton.addEventListener('click', function() {
-
 }
