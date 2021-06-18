@@ -64,7 +64,7 @@ html {
 }
 
 .directions {
-  display: none;
+  display: none !important;
 }
 
 .directions{
