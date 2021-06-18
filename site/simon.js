@@ -13,6 +13,7 @@ function startGame() {
 startButton.addEventListener('click', startGame);
 
 
+<span class="info js-info hidden"></span>;
 
 
 
