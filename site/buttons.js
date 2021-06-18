@@ -17,3 +17,7 @@ let blueButton = document.querySelector('.simon-button.blue');
 blueButton.addEventListener('click', function() {
   alert('You clicked the blue button');
 });
+
+// javascript classList
+// what the user inputs
+// how to keep track of the user input
