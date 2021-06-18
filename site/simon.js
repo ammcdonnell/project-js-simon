@@ -4,12 +4,10 @@
 let sequence = [];
 let humanSequence = [];
 
-const startButton = document.querySelector('.start-button js-start');
-const info = document.querySelector('.directions');
+const startButton = document.querySelector('.js-start');
 
 function startGame() {
-  startButton.classList.add('directions js-directions hidden');
-  info.classList.remove('directions js-directions hidden');
-  info.textContent = 'Wait for the computer';
+  startButton.classList.add('directions');
 }
+
 startButton.addEventListener('click', startGame);
