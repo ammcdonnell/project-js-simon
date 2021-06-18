@@ -13,3 +13,10 @@ info.classList.remove('hidden');
 info.textContent = 'Wait for the computer';
 }
 startButton.addEventListener('click', startGame);
+
+
+
+let lightButton = document.querySelector ('#light-up');
+lightButton.addEventListener('click', function() {
+
+}
