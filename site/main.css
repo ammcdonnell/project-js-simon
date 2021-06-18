@@ -60,9 +60,20 @@ html {
 }
 
 .light-up.simon-button.green {
-  opacity: 40%;
+  opacity: 70%;
 }
 
+.light-up.simon-button.red {
+  opacity: 70%;
+}
+
+.light-up.simon-button.yellow {
+  opacity: 70%;
+}
+
+.light-up.simon-button.blue {
+  opacity: 70%;
+}
 
 .directions{
   text-align: center;
