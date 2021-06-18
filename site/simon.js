@@ -14,5 +14,9 @@ function startGame() {
 }
 startButton.addEventListener('click', startGame);
 
+
+const div = document.createElement('div');
+div.className = 'light-up';
+
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
