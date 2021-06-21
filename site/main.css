@@ -83,3 +83,7 @@ html {
   font-size: 12px;
   text-transform: uppercase;
 }
+
+.active{
+ filter:brightness(130%);
+}
