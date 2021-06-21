@@ -3,7 +3,8 @@
 
 let sequence = [];
 let humanSequence = [];
-let level = 0;
+let round = 1;
+let i = 0
 
 let greenButton = document.querySelector(".simon-button.green");
 let redButton = document.querySelector(".simon-button.red");
@@ -77,8 +78,20 @@ function runGame(index) {
   }
 }
 
-
-
+function checkPlayer() {
+  console.log(moves, comp)
+  if (moves.length == comp.length) { //compares move lengths to see if turn is over
+    if (JSON.stringify(moves) == JSON.stringify(comp)) { // checks to see if user moves match computer moves 
+      // comp move
+      generateNextColor ();
+      i = 0;
+      setTimeout(lightup, 1500);
+    }
+}
+function computerup() {
+  setTimeout(clearColor, 1500)
+  if (i <)
+}
 
 function endGame(text) {
   //Resets the sequences
@@ -91,7 +104,7 @@ function endGame(text) {
   info.classList.add('hidden');
   tileContainer.classList.add('unclickable');
 }
-  
+
   //Show your score and have a play again button maybe?
 
   
