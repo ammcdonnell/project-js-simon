@@ -86,7 +86,17 @@ function checkPlayer() {
       generateNextColor ();
       i = 0;
       setTimeout(lightup, 1500);
-    }
+      else {
+        fail();
+      }
+    } else {
+      //if user moves dont match computer moves during turn then use fails
+      for (let i = 0; i < moves.length; i++) {
+        if (moves[i] !== comp[i]) {
+          fail();
+          return;
+        }
+      }  
 }
 }
 
