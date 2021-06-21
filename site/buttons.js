@@ -9,7 +9,7 @@ function startGame() {
   info.textContent = "Wait for the computer";
   runGame(index);
 }
-startButton.addEventListener("click", startGame);
+
 
 // light-up class - still working on it
 // const div = document.createElement('div');
