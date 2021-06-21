@@ -1,10 +1,9 @@
 // This file contains the game logic.
 // All the event-listening should happen in buttons.js
 
-var sequence = [];
-var humanSequence = [];
+let sequence = [];
 let round = 1;
-var i = 0;
+let i = 0;
 
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
