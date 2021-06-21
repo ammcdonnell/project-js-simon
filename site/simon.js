@@ -100,6 +100,7 @@ function checkPlayer() {
     }
   }
 }
+//Github test
 function compterup() {
   setTimeout(clearColor, 1500);
   if (i < comp.length) {
