@@ -88,9 +88,11 @@ function checkPlayer() {
       setTimeout(lightup, 1500);
     }
 }
+}
+
 function computerup() {
   setTimeout(clearColor, 1500)
-  if (i <)
+  if (i){}
 }
 
 function endGame(text) {
@@ -106,5 +108,3 @@ function endGame(text) {
 }
 
   //Show your score and have a play again button maybe?
-
-  
