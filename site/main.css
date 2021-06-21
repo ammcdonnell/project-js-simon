@@ -84,6 +84,7 @@ html {
   text-transform: uppercase;
 }
 
+/* light-up effect */
 .active{
  filter:brightness(130%);
 }
