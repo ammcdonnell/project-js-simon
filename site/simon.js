@@ -90,7 +90,35 @@ function checkPlayer() {
 }
 function computerup() {
   setTimeout(clearColor, 1500)
-  if (i <)
+  if (i < comp.length) {
+    document.querySelector('.${comp[i]}').classList.add("light-up");
+    switch (comp[i]) {
+  case "red":
+      let sound1 = red.cloneNode();
+      sound1.play();
+      break;
+  case "green":
+     let sound2 = green.cloneNode();
+     sound2.play();
+     break;
+  case "blue":
+    let sound3 = blue.cloneNode();
+    sound3.play();
+    break;
+  case "yellow":
+  let sound4 = yellow.cloneNode();
+  sound4.play();
+  break;
+  default:
+    console.log("?");
+
+
+
+    }
+    setTimeout(lightup, 1500);
+  } else {
+    clearColor();
+  }
 }
 
 function endGame(text) {
