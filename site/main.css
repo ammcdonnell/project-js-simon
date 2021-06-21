@@ -7,6 +7,10 @@ html {
   font-size: 18px;
 }
 
+.testing {
+  color: red;
+}
+
 #content {
   width: 800px;
   margin: 0 auto;
@@ -69,12 +73,12 @@ html {
   opacity: 70%
 } */
 
-.hidden {
-  display: none !important;
-}
-
 .directions {
   text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .start-button {
@@ -85,5 +89,6 @@ html {
 
 /* light-up effect */
 .light-up {
-  filter: brightness(130%);
+  /* filter: brightness(130%); */
+  color: black !important;
 }

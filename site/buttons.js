@@ -1,10 +1,10 @@
-var index = 0;
+var playerIndex = 0;
 // audio files
 
-let green = new Audio("sound1.mp3");
-let red = new Audio("sound2.mp3");
-let yellow = new Audio("sound3.mp3");
-let blue = new Audio("sound4.mp3");
+// let green = new Audio("sound1.mp3");
+// let red = new Audio("sound2.mp3");
+// let yellow = new Audio("sound3.mp3");
+// let blue = new Audio("sound4.mp3");
 
 // start button and directions
 const startButton = document.querySelector(".js-start");
@@ -16,7 +16,8 @@ function startGame() {
   startButton.classList.add("hidden");
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
-  runGame(index);
+  console.log("Starting game");
+  runGame();
 }
 
 // light-up class - still working on it
@@ -27,33 +28,37 @@ function startGame() {
 let greenButton = document.querySelector(".simon-button.green");
 greenButton.addEventListener("click", function () {
   // alert('You clicked the green button');
-  takeInput(0, index);
-  let sound = green.cloneNode();
-  sound.play();
+  console.log("Player pressed 0");
+  takeInput(0, playerIndex);
+  // let sound = green.cloneNode();
+  // sound.play();
 });
 
 let redButton = document.querySelector(".simon-button.red");
 redButton.addEventListener("click", function () {
   // alert("You clicked the red button");
-  takeInput(1, index);
-  let sound = red.cloneNode();
-  sound.play();
+  console.log("Player pressed 1");
+  takeInput(1, playerIndex);
+  // let sound = red.cloneNode();
+  // sound.play();
 });
 
 let yellowButton = document.querySelector(".simon-button.yellow");
 yellowButton.addEventListener("click", function () {
   // alert("You clicked the yellow button");
-  takeInput(2, index);
-  let sound = yellow.cloneNode();
-  sound.play();
+  console.log("Player pressed 2");
+  takeInput(2, playerIndex);
+  // let sound = yellow.cloneNode();
+  // sound.play();
 });
 
 let blueButton = document.querySelector(".simon-button.blue");
 blueButton.addEventListener("click", function () {
   // alert("You clicked the blue button");
-  takeInput(3, index);
-  let sound = blue.cloneNode();
-  sound.play();
+  console.log("Player pressed 3");
+  takeInput(3, playerIndex);
+  // let sound = blue.cloneNode();
+  // sound.play();
 });
 
 // javascript classList
