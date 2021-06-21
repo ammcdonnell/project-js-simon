@@ -1,22 +1,24 @@
 var index = 0;
 // audio files
 
-let green = new Audio("simonSound1.mp3");
-let red = new Audio("simonSound2.mp3");
-let yellow = new Audio("simonSound3.mp3");
-let blue = new Audio("simonSound4.mp3");
+// let green = new Audio("sound1.mp3");
+// let red = new Audio("sound2.mp3");
+// let yellow = new Audio("sound3.mp3");
+// let blue = new Audio("sound4.mp3");
 
 // start button and directions
 const startButton = document.querySelector(".js-start");
 const info = document.querySelector(".js-info");
+startButton.addEventListener("click", startGame);
 
 function startGame() {
+  alert("TESTING START BUTTON");
+  console.log("TESTING START BUTTON");
   startButton.classList.add("hidden");
   info.classList.remove("hidden");
   info.textContent = "Wait for the computer";
   runGame(index);
 }
-
 
 // light-up class - still working on it
 // const div = document.createElement('div');

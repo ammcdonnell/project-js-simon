@@ -6,11 +6,6 @@ let humanSequence = [];
 let round = 1;
 let i = 0;
 
-let greenButton = document.querySelector(".simon-button.green");
-let redButton = document.querySelector(".simon-button.red");
-let yellowButton = document.querySelector(".simon-button.yellow");
-let blueButton = document.querySelector(".simon-button.blue");
-
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
 var newNumber;
@@ -44,6 +39,7 @@ function checkInput() {
 
 function flash(simonButton) {
   //Flash the button for a specified amount of time;
+  document.querySelector(simonButton).classList.add("light-up");
 }
 
 function runGame(index) {
@@ -54,14 +50,15 @@ function runGame(index) {
   //Flashes all the buttons in the sequence in order
   for (button in sequence) {
     if ((button = 0)) {
-      flash(greenButton);
+      flash(".simon-button.green");
     } else if ((button = 1)) {
-      flash(redButton);
+      flash(".simon-button.red");
     } else if ((button = 2)) {
-      flash(yellowButton);
+      flash(".simon-button.yellow");
     } else if ((button = 3)) {
-      flash(blueButton);
+      flash(".simon-button.blue");
     }
+    setTimeout(clearColor(), 1500);
   }
   //Does nothing until you have pressed all the buttons correctly
   //or you press the wrong button and lose the game
@@ -100,33 +97,43 @@ function checkPlayer() {
     }
   }
 }
-//Github test
+function clearColor() {
+  document.querySelector(".simon-button.red").classList.remove("light-up");
+  document.querySelector(".simon-button.green").classList.remove("light-up");
+  document.querySelector(".simon-button.blue").classList.remove("light-up");
+  document.querySelector(".simon-button.yellow").classList.remove("light-up");
+}
+
 function compterup() {
   setTimeout(clearColor, 1500);
-  if (i < comp.length) {
-    document.querySelector(".${comp[i]}").classList.add("light-up");
-    switch (comp[i]) {
-      case "red":
-        let sound1 = red.cloneNode();
-        sound1.play();
-        break;
-      case "green":
-        let sound2 = green.cloneNode();
+  for (i in sequence) {
+    switch (sequence[i]) {
+      case 1:
+        document.querySelector(".simon-button.red").classList.add("light-up");
+        let sound2 = red.cloneNode();
         sound2.play();
         break;
-      case "blue":
-        let sound3 = blue.cloneNode();
-        sound3.play();
+      case 0:
+        document.querySelector(".simon-button.green").classList.add("light-up");
+        let sound1 = green.cloneNode();
+        sound1.play();
         break;
-      case "yellow":
-        let sound4 = yellow.cloneNode();
+      case 3:
+        document.querySelector(".simon-button.blue").classList.add("light-up");
+        let sound4 = blue.cloneNode();
         sound4.play();
+        break;
+      case 2:
+        document
+          .querySelector(".simon-button.yellow")
+          .classList.add("light-up");
+        let sound3 = yellow.cloneNode();
+        sound3.play();
         break;
       default:
         console.log("?");
     }
     setTimeout(lightup, 1500);
-  } else {
     clearColor();
   }
 }

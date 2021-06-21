@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
-
 }
 html {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   font-family: Arial;
   font-size: 18px;
 }
@@ -17,15 +16,15 @@ html {
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Original Surfer', cursive;
+  font-family: "Original Surfer", cursive;
 }
 
 .simon-container {
   margin: 20px auto;
-  width:400px;
-  height:400px;
-  background-color:#fff;
-  display:grid;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  display: grid;
   grid-template-columns: 200px 200px;
   grid-row: auto auto;
   grid-column-gap: 20px;
@@ -51,19 +50,19 @@ html {
 }
 
 .simon-button.green {
-  background-color: #21BA45;
+  background-color: #21ba45;
 }
 
 .simon-button.red {
-  background-color: #DB2828;
+  background-color: #db2828;
 }
 
 .simon-button.yellow {
-  background-color: #FBBD08;
+  background-color: #fbbd08;
 }
 
 .simon-button.blue {
-  background-color: #2185D0;
+  background-color: #2185d0;
 }
 
 /*.light-up {
@@ -74,7 +73,7 @@ html {
   display: none !important;
 }
 
-.directions{
+.directions {
   text-align: center;
 }
 
@@ -85,6 +84,6 @@ html {
 }
 
 /* light-up effect */
-.active{
- filter:brightness(130%);
+.light-up {
+  filter: brightness(130%);
 }
