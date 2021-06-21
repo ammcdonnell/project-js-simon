@@ -1,4 +1,11 @@
 var index = 0;
+// audio files
+
+let green = new Audio("simonSound1.mp3");
+let red = new Audio("simonSound2.mp3");
+let yellow = new Audio("simonSound3.mp3");
+let blue = new Audio("simonSound4.mp3");
+
 // start button and directions
 const startButton = document.querySelector(".js-start");
 const info = document.querySelector(".js-info");
