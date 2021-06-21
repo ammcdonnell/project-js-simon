@@ -1,10 +1,10 @@
 // This file contains the game logic.
 // All the event-listening should happen in buttons.js
 
-let sequence = [];
-let humanSequence = [];
+var sequence = [];
+var humanSequence = [];
 let round = 1;
-let i = 0;
+var i = 0;
 
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
@@ -43,8 +43,9 @@ function flash(simonButton) {
 }
 
 function runGame(index) {
+  info.textContent = "Wait for the computer";
   index = 0;
-  arraySize = sequence.length();
+  arraySize = sequence.length;
   //Adds a button to the sequence
   addtoSequence();
   //Flashes all the buttons in the sequence in order
@@ -58,8 +59,9 @@ function runGame(index) {
     } else if ((button = 3)) {
       flash(".simon-button.blue");
     }
-    setTimeout(clearColor(), 1500);
+    setTimeout(clearColor, 1000);
   }
+  info.textContent = "Your turn";
   //Does nothing until you have pressed all the buttons correctly
   //or you press the wrong button and lose the game
   while (index != arraySize || !gameOver) {}
@@ -141,10 +143,12 @@ function compterup() {
 function endGame(text) {
   //Resets the sequences
   alert(text);
+  info.textContent = "Game Over";
   sequence = [];
   humanSequence = [];
   level = 0;
   startButton.classList.remove("hidden");
+  startButton.textContent = "Try Again?";
   heading.textContent = "Simon Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
