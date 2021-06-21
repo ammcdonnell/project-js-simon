@@ -4,13 +4,12 @@
 let sequence = [];
 let humanSequence = [];
 let round = 1;
-let i = 0
+let i = 0;
 
 let greenButton = document.querySelector(".simon-button.green");
 let redButton = document.querySelector(".simon-button.red");
 let yellowButton = document.querySelector(".simon-button.yellow");
 let blueButton = document.querySelector(".simon-button.blue");
-
 
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
@@ -79,51 +78,51 @@ function runGame(index) {
 }
 
 function checkPlayer() {
-  console.log(moves, comp)
-  if (moves.length == comp.length) { //compares move lengths to see if turn is over
-    if (JSON.stringify(moves) == JSON.stringify(comp)) { // checks to see if user moves match computer moves 
+  console.log(moves, comp);
+  if (moves.length == comp.length) {
+    //compares move lengths to see if turn is over
+    if (JSON.stringify(moves) == JSON.stringify(comp)) {
+      // checks to see if user moves match computer moves
       // comp move
-      generateNextColor ();
+      generateNextColor();
       i = 0;
       setTimeout(lightup, 1500);
-      else {
-        fail();
-      }
     } else {
-      //if user moves dont match computer moves during turn then use fails
-      for (let i = 0; i < moves.length; i++) {
-        if (moves[i] !== comp[i]) {
-          fail();
-          return;
-        }
-      }  
+      fail();
+    }
+  } else {
+    //if user moves dont match computer moves during turn then use fails
+    for (let i = 0; i < moves.length; i++) {
+      if (moves[i] !== comp[i]) {
+        fail();
+        return;
+      }
+    }
+  }
 }
 function compterup() {
-  setTimeout(clearColor, 1500)
+  setTimeout(clearColor, 1500);
   if (i < comp.length) {
-    document.querySelector('.${comp[i]}').classList.add("light-up");
+    document.querySelector(".${comp[i]}").classList.add("light-up");
     switch (comp[i]) {
-  case "red":
-      let sound1 = red.cloneNode();
-      sound1.play();
-      break;
-  case "green":
-     let sound2 = green.cloneNode();
-     sound2.play();
-     break;
-  case "blue":
-    let sound3 = blue.cloneNode();
-    sound3.play();
-    break;
-  case "yellow":
-  let sound4 = yellow.cloneNode();
-  sound4.play();
-  break;
-  default:
-    console.log("?");
-
-
-
+      case "red":
+        let sound1 = red.cloneNode();
+        sound1.play();
+        break;
+      case "green":
+        let sound2 = green.cloneNode();
+        sound2.play();
+        break;
+      case "blue":
+        let sound3 = blue.cloneNode();
+        sound3.play();
+        break;
+      case "yellow":
+        let sound4 = yellow.cloneNode();
+        sound4.play();
+        break;
+      default:
+        console.log("?");
     }
     setTimeout(lightup, 1500);
   } else {
@@ -137,12 +136,10 @@ function endGame(text) {
   sequence = [];
   humanSequence = [];
   level = 0;
-  startButton.classList.remove('hidden');
-  heading.textContent = 'Simon Game';
-  info.classList.add('hidden');
-  tileContainer.classList.add('unclickable');
+  startButton.classList.remove("hidden");
+  heading.textContent = "Simon Game";
+  info.classList.add("hidden");
+  tileContainer.classList.add("unclickable");
 }
 
-  //Show your score and have a play again button maybe?
-
-  
+//Show your score and have a play again button maybe?
