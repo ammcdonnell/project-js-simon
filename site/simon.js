@@ -10,6 +10,7 @@ let redButton = document.querySelector(".simon-button.red");
 let yellowButton = document.querySelector(".simon-button.yellow");
 let blueButton = document.querySelector(".simon-button.blue");
 
+
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
 var newNumber;
@@ -76,9 +77,21 @@ function runGame(index) {
   }
 }
 
-function endGame() {
+
+
+
+function endGame(text) {
   //Resets the sequences
+  alert(text);
   sequence = [];
   humanSequence = [];
-  //Show your score and have a play again button maybe?
+  level = 0;
+  startButton.classList.remove('hidden');
+  heading.textContent = 'Simon Game';
+  info.classList.add('hidden');
+  tileContainer.classList.add('unclickable');
 }
+  
+  //Show your score and have a play again button maybe?
+
+  
