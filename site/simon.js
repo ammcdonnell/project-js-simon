@@ -88,7 +88,7 @@ function checkPlayer() {
       setTimeout(lightup, 1500);
     }
 }
-function computerup() {
+function lightup() {
   setTimeout(clearColor, 1500)
   if (i < comp.length) {
     document.querySelector('.${comp[i]}').classList.add("light-up");
