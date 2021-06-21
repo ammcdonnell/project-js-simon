@@ -27,25 +27,32 @@ let greenButton = document.querySelector(".simon-button.green");
 greenButton.addEventListener("click", function () {
   // alert('You clicked the green button');
   takeInput(0, index);
-  div.classList.remove("light-up");
+  let sound = green.cloneNode();
+  sound.play();
 });
 
 let redButton = document.querySelector(".simon-button.red");
 redButton.addEventListener("click", function () {
   // alert("You clicked the red button");
   takeInput(1, index);
+  let sound = red.cloneNode();
+  sound.play();
 });
 
 let yellowButton = document.querySelector(".simon-button.yellow");
 yellowButton.addEventListener("click", function () {
   // alert("You clicked the yellow button");
   takeInput(2, index);
+  let sound = yellow.cloneNode();
+  sound.play();
 });
 
 let blueButton = document.querySelector(".simon-button.blue");
 blueButton.addEventListener("click", function () {
   // alert("You clicked the blue button");
   takeInput(3, index);
+  let sound = blue.cloneNode();
+  sound.play();
 });
 
 // javascript classList
