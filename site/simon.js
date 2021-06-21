@@ -61,7 +61,7 @@ function runGame(index) {
     }
     setTimeout(clearColor, 1000);
   }
-  info.textContent = "Your turn";
+  // info.textContent = "Your turn";
   //Does nothing until you have pressed all the buttons correctly
   //or you press the wrong button and lose the game
   while (index != arraySize || !gameOver) {}
@@ -143,12 +143,12 @@ function compterup() {
 function endGame(text) {
   //Resets the sequences
   alert(text);
-  info.textContent = "Game Over";
+  // info.textContent = "Game Over";
   sequence = [];
   humanSequence = [];
   level = 0;
   startButton.classList.remove("hidden");
-  startButton.textContent = "Try Again?";
+  // startButton.textContent = "Try Again?";
   heading.textContent = "Simon Game";
   info.classList.add("hidden");
   tileContainer.classList.add("unclickable");
