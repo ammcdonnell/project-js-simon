@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 html {
-  background-color: #fcfcfc;
+  background-color: rgb(231, 231, 231);
   font-family: Arial;
   font-size: 18px;
 }
@@ -24,7 +24,7 @@ html {
 }
 
 #content h2 {
-font-size: 2rem;
+  font-size: 2rem;
   text-align: center;
   font-family: "Original Surfer", cursive;
 }
@@ -33,7 +33,7 @@ font-size: 2rem;
   margin: 20px auto;
   width: 400px;
   height: 400px;
-  background-color: #fff;
+  background-color: rgb(231, 231, 231);
   display: grid;
   grid-template-columns: 200px 200px;
   grid-row: auto auto;
