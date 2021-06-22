@@ -23,6 +23,12 @@ html {
   font-family: "Original Surfer", cursive;
 }
 
+#content h2 {
+font-size: 2rem;
+  text-align: center;
+  font-family: "Original Surfer", cursive;
+}
+
 .simon-container {
   margin: 20px auto;
   width: 400px;
