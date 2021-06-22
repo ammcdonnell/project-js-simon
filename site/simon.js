@@ -91,7 +91,7 @@ function flash(simonButton) {
 
 async function runGame() {
   console.log("Round started");
-  info.textContent = "Wait for the computer";
+  info.textContent = "Dont Mess Up";
   //Adds a button to the sequence
   addtoSequence();
   //Flashes all the buttons in the sequence in order
@@ -132,40 +132,6 @@ function clearColor() {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function compterup() {
-  setTimeout(clearColor, 1500);
-  for (i in sequence) {
-    switch (sequence[i]) {
-      case "red":
-        document.querySelector(".simon-button.red").classList.add("light-up");
-        let sound2 = red.cloneNode();
-        sound2.play();
-        break;
-      case "green":
-        document.querySelector(".simon-button.green").classList.add("light-up");
-        let sound1 = green.cloneNode();
-        sound1.play();
-        break;
-      case "blue":
-        document.querySelector(".simon-button.blue").classList.add("light-up");
-        let sound4 = blue.cloneNode();
-        sound4.play();
-        break;
-      case "yellow":
-        document
-          .querySelector(".simon-button.yellow")
-          .classList.add("light-up");
-        let sound3 = yellow.cloneNode();
-        sound3.play();
-        break;
-      default:
-        console.log("?");
-    }
-    setTimeout(lightup, 1500);
-    clearColor();
-  }
 }
 
 function endGame() {
