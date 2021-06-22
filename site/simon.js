@@ -7,6 +7,7 @@ let round = 1;
 let i = 0;
 let buttonCount = 0;
 let roundClear = false;
+let playerIndex = 0;
 
 // comparison of what the computer has entered vs. what the user has entered
 // how to make the sequence of buttons
@@ -17,11 +18,29 @@ var gameOver = false;
 function addtoSequence() {
   newNumber = Math.random() * 4;
   newNumber = Math.floor(newNumber);
+  switch (newNumber) {
+    case 0:
+      newNumber = "green";
+      break;
+    case 1:
+      newNumber = "red";
+      break;
+    case 2:
+      newNumber = "yellow";
+      break;
+    case 3:
+      newNumber = "blue";
+      break;
+    default:
+      console.log("Im lost");
+      break;
+  }
   sequence.push(newNumber);
   humanSequence.push(newNumber);
-  console.log("New Button: " + newNumber);
-  console.log("HQ: " + humanSequence);
-  console.log("CQ: " + sequence);
+  // console.log("New Button: " + newNumber);
+  // console.log("HQ: " + humanSequence);
+  // console.log("CQ: " + sequence);
+  // console.log("ROUND STATE: ", roundClear);
 }
 
 function takeInput(buttonPressed, playerIndex) {
@@ -35,23 +54,38 @@ function takeInput(buttonPressed, playerIndex) {
   checkInput();
   if (gameOver) {
     endGame();
-  } else if ((roundClear = true)) {
+  } else if (roundClear === true) {
+    console.log("ROUND STATE: ", roundClear);
+    console.log("CHECKPOINT");
     roundClear = false;
     runGame();
-  }
-  //After the sequences are checked, the index is updated so the next button can be pressed
-  else {
+  } else {
+    console.log("PLAYER INDEX INCREASE");
     playerIndex++;
+    console.log("Player index: ", playerIndex);
   }
+}
+
+function compareArray(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  for (i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function checkInput() {
   //If you click the wrong button the two arrays will be different and it will be game over
-  if (sequence != humanSequence) {
-    console.log(sequence + " Does not equal " + humanSequence);
+  if (!compareArray(sequence, humanSequence)) {
+    console.log(sequence, " Does not equal ", humanSequence);
     gameOver = true;
-  } else if ((buttonCount = sequence.length)) {
+  } else if (buttonCount === sequence.length) {
     roundClear = true;
+    buttonCount = 0;
   }
 }
 
@@ -61,19 +95,19 @@ function flash(simonButton) {
 }
 
 function runGame() {
-  console.log("round started");
+  console.log("Round started");
   info.textContent = "Wait for the computer";
   //Adds a button to the sequence
   addtoSequence();
   //Flashes all the buttons in the sequence in order
   for (button in sequence) {
-    if ((button = 0)) {
+    if ((button = "green")) {
       flash(".simon-button.green");
-    } else if ((button = 1)) {
+    } else if ((button = "red")) {
       flash(".simon-button.red");
-    } else if ((button = 2)) {
+    } else if ((button = "yellow")) {
       flash(".simon-button.yellow");
-    } else if ((button = 3)) {
+    } else if ((button = "blue")) {
       flash(".simon-button.blue");
     }
     setTimeout(clearColor, 2000);
@@ -92,22 +126,22 @@ function compterup() {
   setTimeout(clearColor, 1500);
   for (i in sequence) {
     switch (sequence[i]) {
-      case 1:
+      case "red":
         document.querySelector(".simon-button.red").classList.add("light-up");
         let sound2 = red.cloneNode();
         sound2.play();
         break;
-      case 0:
+      case "green":
         document.querySelector(".simon-button.green").classList.add("light-up");
         let sound1 = green.cloneNode();
         sound1.play();
         break;
-      case 3:
+      case "blue":
         document.querySelector(".simon-button.blue").classList.add("light-up");
         let sound4 = blue.cloneNode();
         sound4.play();
         break;
-      case 2:
+      case "yellow":
         document
           .querySelector(".simon-button.yellow")
           .classList.add("light-up");
@@ -128,6 +162,7 @@ function endGame() {
   // info.textContent = "Game Over";
   sequence = [];
   humanSequence = [];
+  buttonCount = 0;
   level = 0;
   info.classList.add("hidden");
   startButton.classList.remove("hidden");

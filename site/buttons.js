@@ -1,4 +1,3 @@
-var playerIndex = 0;
 // audio files
 
 // let green = new Audio("sound1.mp3");
@@ -28,8 +27,8 @@ function startGame() {
 let greenButton = document.querySelector(".simon-button.green");
 greenButton.addEventListener("click", function () {
   // alert('You clicked the green button');
-  console.log("Player pressed 0");
-  takeInput(0, playerIndex);
+  console.log("Player pressed Greeen");
+  takeInput("green");
   // let sound = green.cloneNode();
   // sound.play();
 });
@@ -37,8 +36,8 @@ greenButton.addEventListener("click", function () {
 let redButton = document.querySelector(".simon-button.red");
 redButton.addEventListener("click", function () {
   // alert("You clicked the red button");
-  console.log("Player pressed 1");
-  takeInput(1, playerIndex);
+  console.log("Player pressed Red");
+  takeInput("red");
   // let sound = red.cloneNode();
   // sound.play();
 });
@@ -46,8 +45,8 @@ redButton.addEventListener("click", function () {
 let yellowButton = document.querySelector(".simon-button.yellow");
 yellowButton.addEventListener("click", function () {
   // alert("You clicked the yellow button");
-  console.log("Player pressed 2");
-  takeInput(2, playerIndex);
+  console.log("Player pressed Yellow");
+  takeInput("yellow");
   // let sound = yellow.cloneNode();
   // sound.play();
 });
@@ -55,8 +54,8 @@ yellowButton.addEventListener("click", function () {
 let blueButton = document.querySelector(".simon-button.blue");
 blueButton.addEventListener("click", function () {
   // alert("You clicked the blue button");
-  console.log("Player pressed 3");
-  takeInput(3, playerIndex);
+  console.log("Player pressed Blue");
+  takeInput("blue");
   // let sound = blue.cloneNode();
   // sound.play();
 });
