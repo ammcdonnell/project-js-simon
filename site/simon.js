@@ -37,16 +37,15 @@ function addtoSequence() {
   }
   sequence.push(newNumber);
   humanSequence.push(newNumber);
-  // console.log("New Button: " + newNumber);
-  // console.log("HQ: " + humanSequence);
-  // console.log("CQ: " + sequence);
-  // console.log("ROUND STATE: ", roundClear);
+  console.log("New Button: " + newNumber);
+  console.log("HQ: " + humanSequence);
+  console.log("CQ: " + sequence);
+  console.log("ROUND STATE: ", roundClear);
 }
 
-function takeInput(buttonPressed, playerIndex) {
+function takeInput(buttonPressed) {
   //Everytime you press a button the index of that press will be updated
   //in the human sequence. This is called in button.js
-  console.log("Button Recieved: " + buttonPressed);
   console.log("Player index: " + playerIndex);
   humanSequence[playerIndex] = buttonPressed;
   buttonCount++;
@@ -86,6 +85,7 @@ function checkInput() {
   } else if (buttonCount === sequence.length) {
     roundClear = true;
     buttonCount = 0;
+    playerIndex = 0;
   }
 }
 
@@ -110,6 +110,7 @@ function runGame() {
     } else if ((button = "blue")) {
       flash(".simon-button.blue");
     }
+    console.log("CLEARING COLOR");
     setTimeout(clearColor, 2000);
   }
   // info.textContent = "Your turn";
@@ -157,18 +158,9 @@ function compterup() {
 }
 
 function endGame() {
+  location.reload();
   //Resets the sequences
   alert("Game Over");
-  // info.textContent = "Game Over";
-  sequence = [];
-  humanSequence = [];
-  buttonCount = 0;
-  level = 0;
-  info.classList.add("hidden");
-  startButton.classList.remove("hidden");
-  // startButton.textContent = "Try Again?";
-  // heading.textContent = "Simon Game";
-  // tileContainer.classList.add("unclickable");
 }
 
 //Show your score and have a play again button maybe?
