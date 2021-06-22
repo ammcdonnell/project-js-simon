@@ -40,13 +40,11 @@ function addtoSequence() {
   console.log("New Button: " + newNumber);
   console.log("HQ: " + humanSequence);
   console.log("CQ: " + sequence);
-  console.log("ROUND STATE: ", roundClear);
 }
 
-function takeInput(buttonPressed) {
+async function takeInput(buttonPressed) {
   //Everytime you press a button the index of that press will be updated
   //in the human sequence. This is called in button.js
-  console.log("Player index: " + playerIndex);
   humanSequence[playerIndex] = buttonPressed;
   buttonCount++;
   //After it is updated the button is sequences are checked
@@ -54,14 +52,11 @@ function takeInput(buttonPressed) {
   if (gameOver) {
     endGame();
   } else if (roundClear === true) {
-    console.log("ROUND STATE: ", roundClear);
-    console.log("CHECKPOINT");
     roundClear = false;
+    await sleep(1500);
     runGame();
   } else {
-    console.log("PLAYER INDEX INCREASE");
     playerIndex++;
-    console.log("Player index: ", playerIndex);
   }
 }
 
@@ -94,33 +89,49 @@ function flash(simonButton) {
   document.querySelector(simonButton).classList.add("light-up");
 }
 
-function runGame() {
+async function runGame() {
   console.log("Round started");
   info.textContent = "Wait for the computer";
   //Adds a button to the sequence
   addtoSequence();
   //Flashes all the buttons in the sequence in order
-  for (button in sequence) {
-    if ((button = "green")) {
-      flash(".simon-button.green");
-    } else if ((button = "red")) {
-      flash(".simon-button.red");
-    } else if ((button = "yellow")) {
-      flash(".simon-button.yellow");
-    } else if ((button = "blue")) {
-      flash(".simon-button.blue");
+  for (i = 0; i < sequence.length; i++) {
+    switch (sequence[i]) {
+      case "green":
+        console.log("green");
+        flash(".simon-button.green");
+        break;
+      case "red":
+        console.log("red");
+        flash(".simon-button.red");
+        break;
+      case "yellow":
+        console.log("yellow");
+        flash(".simon-button.yellow");
+        break;
+      case "blue":
+        console.log("blue");
+        flash(".simon-button.blue");
+        break;
+      default:
+        console.log("COLOR ERROR");
+        break;
     }
+    await sleep(500);
     console.log("CLEARING COLOR");
-    setTimeout(clearColor, 2000);
-  }
-  // info.textContent = "Your turn";
+    clearColor();
+    await sleep(250);
+  }  // info.textContent = "Your turn";
 }
-
 function clearColor() {
   document.querySelector(".simon-button.red").classList.remove("light-up");
   document.querySelector(".simon-button.green").classList.remove("light-up");
   document.querySelector(".simon-button.blue").classList.remove("light-up");
   document.querySelector(".simon-button.yellow").classList.remove("light-up");
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function compterup() {

@@ -58,7 +58,7 @@ html {
 }
 
 .simon-button.red {
-  background-color: #db2828;
+  background-color: #8d0404;
 }
 
 .simon-button.yellow {
@@ -89,6 +89,6 @@ html {
 
 /* light-up effect */
 .light-up {
-  /* filter: brightness(130%); */
-  color: black !important;
+  filter: brightness(160%);
+  /* background-color: black !important; */
 }

@@ -25,37 +25,49 @@ function startGame() {
 // document.querySelector('.light-up').style.opacity = '70%';
 
 let greenButton = document.querySelector(".simon-button.green");
-greenButton.addEventListener("click", function () {
+greenButton.addEventListener("click", async function () {
   // alert('You clicked the green button');
   console.log("Player pressed Greeen");
   takeInput("green");
+  flash(".simon-button.green");
+  await sleep(100);
+  clearColor();
   // let sound = green.cloneNode();
   // sound.play();
 });
 
 let redButton = document.querySelector(".simon-button.red");
-redButton.addEventListener("click", function () {
+redButton.addEventListener("click", async function () {
   // alert("You clicked the red button");
   console.log("Player pressed Red");
   takeInput("red");
+  flash(".simon-button.red");
+  await sleep(100);
+  clearColor();
   // let sound = red.cloneNode();
   // sound.play();
 });
 
 let yellowButton = document.querySelector(".simon-button.yellow");
-yellowButton.addEventListener("click", function () {
+yellowButton.addEventListener("click", async function () {
   // alert("You clicked the yellow button");
   console.log("Player pressed Yellow");
   takeInput("yellow");
+  flash(".simon-button.yellow");
+  await sleep(100);
+  clearColor();
   // let sound = yellow.cloneNode();
   // sound.play();
 });
 
 let blueButton = document.querySelector(".simon-button.blue");
-blueButton.addEventListener("click", function () {
+blueButton.addEventListener("click", async function () {
   // alert("You clicked the blue button");
   console.log("Player pressed Blue");
   takeInput("blue");
+  flash(".simon-button.blue");
+  await sleep(100);
+  clearColor();
   // let sound = blue.cloneNode();
   // sound.play();
 });
